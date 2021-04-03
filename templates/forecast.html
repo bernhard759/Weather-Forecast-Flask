@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<center>
+<h2>Wetterbericht für {{name}}, {{ country }}</h2>
+</center>
+<p style="margin-top:2em;">Temperaturen (Grad Celsius)</p>
+
+<div>
+    <center>
+        <div class="chart-container" style="width:90%">
+            <canvas id="chartCanvas"></canvas>
+        </div>
+    </center>
+
+
+    <div class="icon">
+        <p>Wetter</p>
+        <center>
+            <table style="width:90%">
+
+                <tr>
+                    {% for d in dates %}
+                    <td style="font-size:14px;color:black">{{d}}</td>
+                    {% endfor %}
+                </tr>
+
+                <tr>
+                    {% for w in w_list %}
+                    <td><img src="http://openweathermap.org/img/wn/{{w[1]}}@2x.png">
+                        <p style="font-size:14px;color:grey">{{w[0]}}</p>
+                    </td>
+                    {% endfor %}
+                </tr>
+            </table>
+        </center>
+    </div>
+</div>
+
+<script>
+    Chart.defaults.global.legend.display = false;
+
+    var ctx = document.getElementById('chartCanvas').getContext('2d');
+
+    var myLineChart = new Chart(ctx, {
+
+        type: 'line',
+
+        data: {
+
+            labels: {{ dates| safe }},
+
+            datasets: [{
+
+                data: {{ temps }},
+                borderColor: "#3e95cd",
+                fill: false
+
+                        }]
+            },
+
+    options: {
+        title: {
+            display: false
+        },
+        scales: {
+            yAxes: [{
+            ticks: {
+                beginAtZero: true
+            }
+          }]
+        }
+    }
+});
+
+
+</script>
+
+{% endblock %}
