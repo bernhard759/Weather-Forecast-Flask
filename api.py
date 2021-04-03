@@ -34,6 +34,5 @@ def getWeather(lat, lon, part):
 
 
 if __name__ == "__main__":
-	
 	lat, lon, part, name, country = getGeo("Weiden")
 	print(getWeather(lat, lon, part))

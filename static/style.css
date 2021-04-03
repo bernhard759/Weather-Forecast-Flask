@@ -3,9 +3,6 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-
-
-
 img {
   max-width: 100%;
   height: auto;
@@ -20,18 +17,12 @@ text-align: center;
 }
 
 .main {
-    position: relative;
-    top: 15%;
-    vertical-align: middle;
-    background-color: white; 
+    margin: 2em auto;
+    background-color: white;
     border-radius: 25px;
     padding: 20px;
     width: 50%;
 }
-
-@media screen and (max-width: 850px) {
-    .main { width: 76%; }
-    }
 
 canvas {
   height: 100vh;
@@ -40,6 +31,7 @@ canvas {
 }
 
 @media screen and (max-width: 850px) {
+    .main { width: 80%; }
     .icon { display: none; }
     }
 

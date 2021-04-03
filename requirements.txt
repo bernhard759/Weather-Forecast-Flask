@@ -1,33 +1,19 @@
-aniso8601 @ file:///home/conda/feedstock_root/build_artifacts/aniso8601_1613958697960/work
-branca @ file:///home/conda/feedstock_root/build_artifacts/branca_1609346930842/work
-brotlipy==0.7.0
+aniso8601==9.0.1
 certifi==2020.12.5
-cffi @ file:///D:/bld/cffi_1613414103629/work
-chardet @ file:///D:/bld/chardet_1610093673558/work
+chardet==4.0.0
 click==7.1.2
-cryptography @ file:///D:/bld/cryptography_1615406362715/work
-docutils @ file:///D:/bld/docutils_1610127967785/work
+docutils==0.17
 Flask==1.1.2
 Flask-RESTful==0.3.8
-folium @ file:///home/conda/feedstock_root/build_artifacts/folium_1615570722684/work
 gunicorn==20.1.0
-idna @ file:///home/conda/feedstock_root/build_artifacts/idna_1593328102638/work
+idna==2.10
 itsdangerous==1.1.0
-Jinja2==2.11.2
-Kivy @ file:///D:/bld/kivy_1608575442356/work
-MarkupSafe @ file:///C:/ci/markupsafe_1607027406824/work
-numpy @ file:///D:/bld/numpy_1612953195634/work
-olefile @ file:///home/conda/feedstock_root/build_artifacts/olefile_1602866521163/work
-Pillow @ file:///D:/bld/pillow_1615244127530/work
-pycparser @ file:///home/conda/feedstock_root/build_artifacts/pycparser_1593275161868/work
-Pygments @ file:///home/conda/feedstock_root/build_artifacts/pygments_1615243893546/work
-pyOpenSSL @ file:///home/conda/feedstock_root/build_artifacts/pyopenssl_1608055815057/work
-PySocks @ file:///D:/bld/pysocks_1610291737679/work
-python-dateutil==2.8.1
-pytz @ file:///home/conda/feedstock_root/build_artifacts/pytz_1612179539967/work
-requests @ file:///home/conda/feedstock_root/build_artifacts/requests_1608156231189/work
-six @ file:///home/conda/feedstock_root/build_artifacts/six_1590081179328/work
-urllib3 @ file:///home/conda/feedstock_root/build_artifacts/urllib3_1615828766818/work
+Jinja2==2.11.3
+MarkupSafe==1.1.1
+Pygments==2.8.1
+pytz==2021.1
+requests==2.25.1
+six==1.15.0
+urllib3==1.26.4
 Werkzeug==1.0.1
-win-inet-pton @ file:///D:/bld/win_inet_pton_1610147566412/work
 wincertstore==0.2
