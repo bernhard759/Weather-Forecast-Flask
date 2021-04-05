@@ -47,8 +47,16 @@
             labels: {{ dates| safe }},
             datasets: [{
                 data: {{ temps }},
-                pointRadius: 4,
-                pointHoverRadius: 4,
+                pointRadius: function(context) {
+                    var index = context.dataIndex;
+                    if (index == 0) return 6;
+                    else return 4
+                    },
+                pointHoverRadius: function(context) {
+                    var index = context.dataIndex;
+                    if (index == 0) return 6;
+                    else return 4
+                    },
                 pointBackgroundColor: "steelblue",
                 borderColor: "steelblue",
                 fill: true}]

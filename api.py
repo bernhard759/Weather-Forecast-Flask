@@ -16,6 +16,7 @@ def getGeo(city):
 	country = response[0]["country"]
 	lat = response[0]["lat"]
 	lon = response[0]["lon"]
+	print(lat, lon)
 	part = "current,minutely,hourly"
 	return lat, lon, part, name, country
 
@@ -24,9 +25,10 @@ def getWeather(lat, lon, part):
 	"""get weather forecast in german language"""
 	url_forecast = f"https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude={part}&units=metric&lang=de&appid={key}"
 	response_forecast = requests.get(url_forecast).json()
+	print(response_forecast)
 	temp_dict = {}
 	weather_dict = {}
-	for day in response_forecast["daily"]:
+	for day in response_forecast["daily"][:-1]:
 		temp_dict[datetime.strptime(str(datetime.fromtimestamp(day["dt"])), "%Y-%m-%d %X").strftime("%A")] = day["temp"]["day"]
 		weather_dict[datetime.strptime(str(datetime.fromtimestamp(day["dt"])), "%Y-%m-%d %X").strftime("%A")] = day["weather"][0]["description"], day["weather"][0]["icon"]
 	print(weather_dict)
