@@ -21,8 +21,8 @@ def getGeo(city):
 
 
 def getWeather(lat, lon, part):
-	"""get weather forecast"""
-	url_forecast = f"https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude={part}&units=metric&appid={key}"
+	"""get weather forecast in german language"""
+	url_forecast = f"https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude={part}&units=metric&lang=de&appid={key}"
 	response_forecast = requests.get(url_forecast).json()
 	temp_dict = {}
 	weather_dict = {}

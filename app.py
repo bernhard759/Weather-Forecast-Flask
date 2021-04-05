@@ -2,6 +2,10 @@
 import api
 from flask import Flask, render_template, request
 
+# translation dictionary
+T_DICT = {"Monday": "Montag", "Tuesday": "Dienstag", "Wednesday": "Mittwoch", "Thursday": "Donnerstag",
+          "Friday": "Freitag", "Saturday": "Samstag", "Sunday": "Sonntag"}
+
 
 # flask app object
 app = Flask(__name__)
@@ -10,9 +14,10 @@ app = Flask(__name__)
 # route
 @app.route("/", methods=["POST", "GET"])
 def forecast():
-
+    
     # check for post request
     if request.method == "POST":
+    
         city = request.form.get("city")
         
         # error handling
@@ -23,7 +28,7 @@ def forecast():
         
         # get forecast data
         temp_forecast, w_forecast = api.getWeather(lat, lon, part)
-        date_list = [date for date in temp_forecast]
+        date_list = [T_DICT[date] for date in temp_forecast]
         temp_list = [value for _, value in temp_forecast.items()]
         w_list = [value for _, value in w_forecast.items()]
 
@@ -34,8 +39,8 @@ def forecast():
         
         # render the home template
         return render_template("home.html")
-    
 
+    
 # run app on test server
 if __name__ == "__main__":
     app.run(debug=True)
