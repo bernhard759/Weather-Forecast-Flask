@@ -47,8 +47,11 @@
             labels: {{ dates| safe }},
             datasets: [{
                 data: {{ temps }},
-                borderColor: "#3e95cd",
-                fill: false}]
+                pointRadius: 4,
+                pointHoverRadius: 4,
+                pointBackgroundColor: "steelblue",
+                borderColor: "steelblue",
+                fill: true}]
             },
         options: {
             title: {
